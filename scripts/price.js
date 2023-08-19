@@ -47,7 +47,7 @@ function calculateDiscount(){
         const discountAmountShow = document.getElementById('discount-amount');
         discountAmountShow.innerText = discountAmount;
 
-        // show New total Price
+        // calculate New total Price
         const newTotalPrice = totalPrice - discountAmount;
 
         //show the new total amount
