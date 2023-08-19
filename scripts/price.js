@@ -9,12 +9,11 @@ function calculatePrice(target){
     seletedItemContainer.appendChild(li);
 
     //get the item price
-    const ItemPriceElement = document.getElementById('price');
-    const ItemPriceString = ItemPriceElement.innerText;
-    const ItemPrice = parseFloat(ItemPriceString);
+    const price = target.childNodes[3].childNodes[9].innerText.split(" ")[0];
+    const itemPrice = parseFloat(price);
     
     //calculate total price
-    totalPrice += ItemPrice;
+    totalPrice += itemPrice;
     
     //show total price
     const totalPriceShow = document.getElementById('total-price');
@@ -35,3 +34,24 @@ function calculatePrice(target){
 }
 
 
+function calculateDiscount(){
+    // take the discount field value 
+    const discounField = document.getElementById('cupon-code');
+    const discountFieldValue = discounField.value;
+
+    //find the discount amount
+    if(discountFieldValue == 'SELL200'){
+        const discountAmount = (totalPrice * 20) / 100;
+        
+        // show the discount amount
+        const discountAmountShow = document.getElementById('discount-amount');
+        discountAmountShow.innerText = discountAmount;
+
+        // show New total Price
+        const newTotalPrice = totalPrice - discountAmount;
+
+        //show the new total amount
+        const newTotalfield = document.getElementById('new-total');
+        newTotalfield.innerText = newTotalPrice;
+    }
+}
