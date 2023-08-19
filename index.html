@@ -47,7 +47,7 @@
                     <div class="flex gap-6">
 
                         <!-- card-1-start  -->
-                    <div class="card w-72 bg-base-100 shadow-xl">
+                    <div class="card w-72 bg-base-100 shadow-xl" onclick="calculatePrice(this)">
                         <figure class="px-10 bg-gray-400 py-10">
                           <img src="/images/prod1.png" alt="K. Accessories" class="rounded-xl" />
                         </figure>
@@ -62,7 +62,7 @@
                               </div>
                             <!-- rating-end  -->
                           <h2 class="card-title text-xl font-medium">K. Accessories</h2>
-                          <p class="text-gray-400 text-xl font-normal"><span>39.00</span> TK</p>
+                          <p class="text-gray-400 text-xl font-normal"><span id="price">39.00</span> TK</p>
                         </div>
                       </div>
                     <!-- card-1-end  -->
@@ -128,8 +128,8 @@
                     <!-- input-filed-start -->
                     <div class="form-control">
                         <div class="input-group">
-                          <input type="text" placeholder="Coupon code" class="input input-bordered" />
-                          <button class="btn btn-square bg-[#E527B2] p-5 text-white" disabled="disabled">
+                          <input id="cupon-code" type="text" placeholder="Coupon code" class="input input-bordered" />
+                          <button onclick="calculateDiscount()" class="btn btn-square bg-[#E527B2] p-5 text-white" >
                             Apply
                           </button>
                         </div>
@@ -142,10 +142,13 @@
                 <!-- purchase-part-start  -->
                 <div class="bg-white p-6 shadow-lg mt-6">
                     <!-- add-item-start  -->
+                    <div id="added-item">
+
+                    </div>
                     <!-- add-item-end  -->
 
                     <!-- price-start  -->
-                    <p class="text-2xl font-medium">Total Price :  <span class="text-gray-400"><Span>257.00</Span>TK</span></p>
+                    <p class="text-2xl font-medium">Total Price :  <span class="text-gray-400"><Span id="total-price">00.00</Span>TK</span></p>
                     <p class="text-2xl font-medium">Discount :  <span class="text-gray-400"><Span>257.00</Span>TK</span></p>
                     <p class="text-2xl font-medium">Total :  <span class="text-gray-400"><Span>257.00</Span>TK</span></p>
                     <!-- price-end  -->
@@ -167,5 +170,8 @@
 
     </footer>
     <!-- footer part end -->
+
+    <!-- script files  -->
+    <script src="scripts/price.js"></script>
   </body>
 </html>
