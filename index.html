@@ -129,7 +129,7 @@
                     <div class="form-control">
                         <div class="input-group">
                           <input id="cupon-code" type="text" placeholder="Coupon code" class="input input-bordered" />
-                          <button onclick="calculateDiscount()" class="btn btn-square bg-[#E527B2] p-5 text-white" >
+                          <button onclick="calculateDiscount()" class="btn btn-square bg-[#E527B2] p-5 text-white" id="coupon-btn" disabled>
                             Apply
                           </button>
                         </div>
@@ -149,11 +149,11 @@
 
                     <!-- price-start  -->
                     <p class="text-2xl font-medium">Total Price :  <span class="text-gray-400"><Span id="total-price">00.00</Span>TK</span></p>
-                    <p class="text-2xl font-medium">Discount :  <span class="text-gray-400"><Span>257.00</Span>TK</span></p>
-                    <p class="text-2xl font-medium">Total :  <span class="text-gray-400"><Span>257.00</Span>TK</span></p>
+                    <p class="text-2xl font-medium">Discount :  <span class="text-gray-400"><Span id="discount-amount">00.00</Span>TK</span></p>
+                    <p class="text-2xl font-medium">Total :  <span class="text-gray-400"><Span id="new-total">00.00</Span>TK</span></p>
                     <!-- price-end  -->
 
-                    <button class="mt-5 btn btn-square bg-[#E527B2] w-full text-white" disabled="disabled">Make Purchase</button>
+                    <button class="mt-5 btn btn-square bg-[#E527B2] w-full text-white" id="purchase-btn" disabled>Make Purchase</button>
                 </div>
                 <!-- purchase-part-end  -->
 

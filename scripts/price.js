@@ -19,16 +19,19 @@ function calculatePrice(target){
     //show total price
     const totalPriceShow = document.getElementById('total-price');
     totalPriceShow.innerText = totalPrice;
-}
 
-function calculateDiscount(){
-    // take the discount field value 
-    const discounField = document.getElementById('cupon-code');
-    const discountFieldValue = discounField.value;
 
-    //find the discount amount
-    if(discountFieldValue == 'SELL200'){
-        const discountAmount = (totalPrice * 20) / 100;
-        console.log(discountAmount);
+    //active purchase btn
+    const purchaseButton = document.getElementById('purchase-btn');
+    if(totalPrice > 0){
+        purchaseButton.removeAttribute("disabled");
+    }
+
+    // active coupon btn 
+    const couponButton = document.getElementById('coupon-btn');
+    if(totalPrice > 200){
+        couponButton.removeAttribute("disabled");
     }
 }
+
+
