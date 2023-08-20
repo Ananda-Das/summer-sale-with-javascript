@@ -1,15 +1,21 @@
 let totalPrice = 0.00;
+
+//get the field values
+function fieldValues(field){
+    const fieldValue = document.getElementById(field);
+    return fieldValue;
+}
+
+//calculate the total price
 function calculatePrice(target){
     //get the item Name
     const itemName = target.childNodes[3].childNodes[7].innerText;
    
-    // li.innerText = itemName;
-    const seletedItemContainer = document.getElementById('added-item');
+    const seletedItemContainer = fieldValues('added-item');
     const count = seletedItemContainer.childElementCount;
-
     const p = document.createElement('p');
-    // const li = document.createElement('li');
     p.innerHTML = `${count + 1}. ${itemName}`;
+
     // show the item name
     seletedItemContainer.appendChild(p);
 
@@ -21,21 +27,29 @@ function calculatePrice(target){
     totalPrice += itemPrice;
     
     //show total price
-    const totalPriceShow = document.getElementById('total-price');
-    totalPriceShow.innerText = totalPrice.toFixed(2);
+    setElementInnerText('total-price',totalPrice.toFixed(2));
+
+    //show the total amount
+    setElementInnerText('new-total',totalPrice.toFixed(2));
 
 
     //active purchase btn
-    const purchaseButton = document.getElementById('purchase-btn');
+    const purchaseButton = fieldValues('purchase-btn');
     if(totalPrice > 0){
         purchaseButton.removeAttribute("disabled");
     }
 
     // active coupon btn 
-    const couponButton = document.getElementById('coupon-btn');
-    if(totalPrice > 200){
+    const couponButton = fieldValues('coupon-btn');
+    if(totalPrice >= 200){
         couponButton.removeAttribute("disabled");
     }
+}
+
+// reusable set span, p, div, etc text
+function setElementInnerText(elementId, area){
+    const element = document.getElementById(elementId);
+    element.innerText = area;
 }
 
 
@@ -46,32 +60,48 @@ function calculateDiscount(){
 
     //find the discount amount
     if(discountFieldValue == 'SELL200'){
+        //set discount amount
         const discountAmount = (totalPrice * 20) / 100;
         
         // show the discount amount
-        const discountAmountShow = document.getElementById('discount-amount');
-        discountAmountShow.innerText = discountAmount;
+        setElementInnerText('discount-amount',discountAmount.toFixed(2));
 
         // calculate New total Price
         const newTotalPrice = totalPrice - discountAmount;
 
         //show the new total amount
-        const newTotalfield = document.getElementById('new-total');
-        newTotalfield.innerText = newTotalPrice;
+        setElementInnerText('new-total',newTotalPrice.toFixed(2));
+    }else{
+        alert('Please Insert Valid Coupon Code');
     }
 }
 
 //remove price after click go home button
 function clearPrice(){
     //remove the item names
-    const clearItemNames = document.getElementById('added-item');
-    clearItemNames.innerText ='';
+    setElementInnerText('added-item','');
 
     //remove the total price
-    const clearTotalPrice = document.getElementById('total-price');
     totalPrice = 0;
-    clearTotalPrice.innerText = '00.00';
+    setElementInnerText('total-price', '00.00');
 
+    //remove the discount price
+    setElementInnerText('discount-amount', '00.00');
     
+    //remove the total price
+    setElementInnerText('new-total', '00.00');
+
+    //clear the discount input field
+    const couponFieldValue = document.getElementById('cupon-code');
+    couponFieldValue.value = '';
+
+    //deactive purchase btn
+    const purchaseButton = fieldValues('purchase-btn');
+    purchaseButton.disabled = true;
+
+    //deactive coupon btn 
+    const couponButton = fieldValues('coupon-btn');
+    couponButton.disabled = true;
+
 }
 

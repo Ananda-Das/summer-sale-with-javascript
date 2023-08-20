@@ -24,9 +24,9 @@
     <!-- header part start -->
     <header>
       <!-- header-container  -->
-      <div class="flex items-center justify-around bg-[#F9F6E2] gap-9 p-9 h-screen">
+      <div class="flex flex-col lg:flex-row items-center justify-around bg-[#F9F6E2] gap-9 lg:p-9 lg:h-screen">
         <!-- header-text-start  -->
-        <div class="header-text text-center px-32">
+        <div class="header-text text-center lg:px-32 px-9">
           <p class="text-3xl font-medium mb-11">---SALE FEVER---</p>
           <h1 class="text-6xl font-bold">Purchase TK 200 or above & get <span class="text-[#E527B2] mb-10">20% off</span></h1>
           <p class="text-2xl font-medium mt-10 inline-block">Use Promo Code</p>
@@ -44,9 +44,9 @@
     <!-- header part end -->
 
     <!-- main part start -->
-    <main class="mt-32 w-9/12 mx-auto">
+    <main class="mt-32 w-[95%] mx-auto ">
       <!-- main-container-start  -->
-      <div class="flex flex-1 gap-6 mb-16">
+      <div class="flex flex-1 flex-col lg:flex-row gap-6 mb-16 ">
         <!-- card-part-start  -->
         <div class="card-part text-[#424141]">
           <!-- Kitchenware-section-start  -->
@@ -55,11 +55,11 @@
 
             <!-- card-container-start -->
 
-            <div class="flex gap-6">
+            <div class="flex flex-col lg:flex-row gap-6 items-center">
               <!-- card-1-start  -->
               <div class="card w-72 bg-base-100 shadow-2xl p-5" onclick="calculatePrice(this)">
                 <div class="h-full">
-                  <figure class="px-10 py-10 bg-gray-300 h-full">
+                  <figure class="px-10 py-10 bg-gray-300 h-full rounded-lg">
                     <img src="/images/prod1.png" alt="K. Accessories" class="rounded-xl" />
                   </figure>
                 </div>
@@ -82,7 +82,7 @@
               <!-- card-2-start  -->
               <div class="card w-72 bg-base-100 shadow-2xl p-5" onclick="calculatePrice(this)">
                 <div class="h-full">
-                  <figure class="px-10 bg-gray-300 py-10 h-full">
+                  <figure class="px-10 bg-gray-300 py-10 h-full rounded-lg">
                     <img src="/images/prod2.png" alt="K. Accessories" class="rounded-xl" />
                   </figure>
                 </div>
@@ -105,7 +105,7 @@
               <!-- card-3-start  -->
               <div class="card w-72 bg-base-100 shadow-2xl p-5" onclick="calculatePrice(this)">
                 <div class="h-full">
-                  <figure class="px-10 bg-gray-300 py-10 h-full">
+                  <figure class="px-10 bg-gray-300 py-10 h-full rounded-lg">
                     <img src="/images/prod3.png" alt="Home Cooker" class="rounded-xl" />
                   </figure>
                 </div>
@@ -131,12 +131,12 @@
           <!-- Kitchenware-section-end  -->
 
           <!-- Sportswear-section-start  -->
-          <div class="sportswear mt-8">
+          <div class="sportswear mt-8 ">
             <h2 class="text-4xl font-semibold mb-12 text-[#111111]">Sportswear</h2>
 
             <!-- card-container-start -->
 
-            <div class="flex gap-6">
+            <div class="flex flex-col lg:flex-row gap-6 items-center">
               <!-- card-1-start  -->
               <div class="card w-72 bg-base-100 shadow-2xl p-5" onclick="calculatePrice(this)">
                 <div class="h-full">
@@ -144,7 +144,7 @@
                     <img src="/images/prod4.png" alt="Sports Back Cap" class="rounded-xl" />
                   </figure>
                 </div>
-                <div class="card-body items-center text-center">
+                <div class="card-body items-center text-center rounded-lg">
                   <!-- rating-start  -->
                   <div class="rating">
                     <input type="radio" name="rating-5" class="mask mask-star-2 bg-orange-400" />
@@ -163,7 +163,7 @@
               <!-- card-2-start  -->
               <div class="card w-72 bg-base-100 shadow-2xl p-5" onclick="calculatePrice(this)">
                 <div class="h-full">
-                  <figure class="px-10 bg-gray-300 py-10 h-full">
+                  <figure class="px-10 bg-gray-300 py-10 h-full rounded-lg">
                     <img src="/images/prod5.png" alt="Full Jersey Set" class="rounded-xl" />
                   </figure>
                 </div>
@@ -186,7 +186,7 @@
               <!-- card-3-start  -->
               <div class="card w-72 bg-base-100 shadow-2xl p-5" onclick="calculatePrice(this)">
                 <div class="h-full">
-                  <figure class="px-10 bg-gray-300 py-10 h-full">
+                  <figure class="px-10 bg-gray-300 py-10 h-full rounded-lg">
                     <img src="/images/prod6.png" alt="Sports cates" class="rounded-xl" />
                   </figure>
                 </div>
@@ -214,16 +214,17 @@
         <!-- card-part-end  -->
 
         <!-- discount-part-start  -->
-        <div class="mt-20">
+        <div class="mt-20 ">
+          
           <!-- cupon-part-start -->
-          <div class="bg-white p-6 shadow-lg">
+          <div class="bg-white lg:p-6 shadow-lg py-5 px-4">
             <h3 class="text-2xl font-medium mb-4">Have coupon?</h3>
 
             <!-- input-filed-start -->
-            <div class="form-control">
-              <div class="input-group">
-                <input id="cupon-code" type="text" placeholder="Coupon code" class="input input-bordered p-2 inline-block" />
-                <button onclick="calculateDiscount()" class="btn text-xl bg-[#E527B2] text-white block px-2" id="coupon-btn" >Apply</button>
+            <div class="">
+              <div class="">
+                <input id="cupon-code" type="text" placeholder="Coupon code" class="input input-bordered inline-block lg:px-2 rounded-none" />
+                <button onclick="calculateDiscount()" class="btn ml-[-7px] text-xl bg-[#E527B2] text-white inline-block px-2 rounded-r-lg rounded-b-none pb-[3px] " id="coupon-btn" disabled >Apply</button>
               </div>
             </div>
             <!-- input-filed-end -->
@@ -231,21 +232,25 @@
           <!-- cupon-part-end -->
 
           <!-- purchase-part-start  -->
-          <div class="bg-white p-6 shadow-lg mt-6">
+          <div class="bg-white p-6 shadow-lg mt-6 ">
             <!-- add-item-start  -->
-            <div class="text-2xl font-medium" id="added-item"></div>
+            <div class="text-2xl font-medium" id="added-item">
+
+            </div>
             <!-- add-item-end  -->
 
             <!-- price-start  -->
-            <p class="text-2xl font-medium">
-              Total Price : <span class="text-gray-400"><span id="total-price">00.00</span>TK</span>
-            </p>
-            <p class="text-2xl font-medium">
-              Discount : <span class="text-gray-400"><span id="discount-amount">00.00</span>TK</span>
-            </p>
-            <p class="text-2xl font-medium">
-              Total : <span class="text-gray-400"><span id="new-total">00.00</span>TK</span>
-            </p>
+            <div class="border-y-2">
+              <p class="text-2xl font-medium ">
+                Total Price : <span class="text-gray-400"><span id="total-price">00.00</span>TK</span>
+              </p>
+              <p class="text-2xl font-medium">
+                Discount : <span class="text-gray-400"><span id="discount-amount">00.00</span>TK</span>
+              </p>
+              <p class="text-2xl font-medium">
+                Total : <span class="text-gray-400"><span id="new-total">00.00</span>TK</span>
+              </p>
+            </div>
             <!-- price-end  -->
 
             <button class="mt-5 btn btn-square bg-[#E527B2] w-full text-white" id="purchase-btn" onclick="my_modal_4.showModal()" disabled>
@@ -255,12 +260,12 @@
             <!-- modal-start  -->
             <!-- You can open the modal using ID.showModal() method -->
             <dialog id="my_modal_4" class="modal">
-              <form method="dialog" class="modal-box w-1/3 max-w-5xl text-center items-center p-8">
-                <div class="w-3/6 mx-auto">
+              <form method="dialog" class="modal-box lg:w-1/3 lg:max-w-5xl text-center items-center lg:p-8 p-5">
+                <div class="lg:w-3/6 mx-auto">
                   <img src="images/congo.png" alt="modal-img" class="w-3/6 mx-auto" />
                 </div>
-                <h3 class="font-bold text-5xl mb-4 mt-10">Congratulations</h3>
-                <p class="py-4 text-xl font-normal">Your Purchase the product</p>
+                <h3 class="font-bold lg:text-5xl text-4xl lg:mb-4 mt-10">Congratulations</h3>
+                <p class="lg:py-4 text-xl font-normal">Your Purchase the product</p>
                 <div class="modal-action justify-center">
                   <!-- if there is a button, it will close the modal -->
                   <button class="btn bg-[#E527B2] text-white text-xl font-semibold" onclick="clearPrice()">Go Home</button>
