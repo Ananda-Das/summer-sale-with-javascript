@@ -1,12 +1,17 @@
-let totalPrice = 0;
+let totalPrice = 0.00;
 function calculatePrice(target){
     //get the item Name
     const itemName = target.childNodes[3].childNodes[7].innerText;
-    const li = document.createElement('li');
-    li.innerText = itemName;
+   
+    // li.innerText = itemName;
     const seletedItemContainer = document.getElementById('added-item');
+    const count = seletedItemContainer.childElementCount;
+
+    const p = document.createElement('p');
+    // const li = document.createElement('li');
+    p.innerHTML = `${count + 1}. ${itemName}`;
     // show the item name
-    seletedItemContainer.appendChild(li);
+    seletedItemContainer.appendChild(p);
 
     //get the item price
     const price = target.childNodes[3].childNodes[9].innerText.split(" ")[0];
@@ -17,7 +22,7 @@ function calculatePrice(target){
     
     //show total price
     const totalPriceShow = document.getElementById('total-price');
-    totalPriceShow.innerText = totalPrice;
+    totalPriceShow.innerText = totalPrice.toFixed(2);
 
 
     //active purchase btn
@@ -54,5 +59,19 @@ function calculateDiscount(){
         const newTotalfield = document.getElementById('new-total');
         newTotalfield.innerText = newTotalPrice;
     }
+}
+
+//remove price after click go home button
+function clearPrice(){
+    //remove the item names
+    const clearItemNames = document.getElementById('added-item');
+    clearItemNames.innerText ='';
+
+    //remove the total price
+    const clearTotalPrice = document.getElementById('total-price');
+    totalPrice = 0;
+    clearTotalPrice.innerText = '00.00';
+
+    
 }
 
