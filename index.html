@@ -9,16 +9,17 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@3.5.1/dist/full.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body>
+  <body class="text-[#111111]">
     <!-- header part start -->
     <header>
         <!-- header-container  -->
         <div class="flex items-center justify-around bg-[#F9F6E2] gap-9 p-9 h-screen">
             <!-- header-text-start  -->
-            <div class="header-text text-center text-[#111111]">
+            <div class="header-text text-center px-32">
                 <p class="text-3xl font-medium mb-11">---SALE FEVER---</p>
                 <h1 class="text-6xl font-bold">Purchase TK 200 or above & get <span class="text-[#E527B2] mb-10">20% off</span></h1>
-                <p class="text-2xl font-medium mt-10 inline-block">Use Promo Code</p> <button class="btn bg-[#E527B2] text-white text-2xl font-semibold inline">SELL200</button>
+                <p class="text-2xl font-medium mt-10 inline-block">Use Promo Code</p> 
+                <span class="bg-[#E527B2] text-white text-2xl font-semibold inline p-3 rounded-lg">SELL200</span>
             </div>
             <!-- header-text-end -->
 
@@ -232,7 +233,24 @@
                     <p class="text-2xl font-medium">Total :  <span class="text-gray-400"><Span id="new-total">00.00</Span>TK</span></p>
                     <!-- price-end  -->
 
-                    <button class="mt-5 btn btn-square bg-[#E527B2] w-full text-white" id="purchase-btn" disabled>Make Purchase</button>
+                    <button class="mt-5 btn btn-square bg-[#E527B2] w-full text-white" id="purchase-btn" onclick="my_modal_4.showModal()" >Make Purchase</button>
+
+                    <!-- modal-start  -->
+                    <!-- You can open the modal using ID.showModal() method -->
+                    <dialog id="my_modal_4" class="modal">
+                      <form method="dialog" class="modal-box w-1/3 max-w-5xl text-center items-center p-8">
+                        <div class="w-3/6 mx-auto">
+                          <img src="images/congo.png" alt="modal-img" class="w-3/6 mx-auto">
+                        </div>
+                        <h3 class="font-bold text-5xl mb-4 mt-10">Congratulations</h3>
+                        <p class="py-4 text-xl font-normal">Your Purchase the product</p>
+                        <div class="modal-action justify-center">
+                          <!-- if there is a button, it will close the modal -->
+                          <button class="btn bg-[#E527B2] text-white text-xl font-semibold">Go Home</button>
+                        </div>
+                      </form>
+                    </dialog>
+                    <!-- modal-end  -->
                 </div>
                 <!-- purchase-part-end  -->
 

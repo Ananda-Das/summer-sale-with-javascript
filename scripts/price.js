@@ -55,3 +55,4 @@ function calculateDiscount(){
         newTotalfield.innerText = newTotalPrice;
     }
 }
+
